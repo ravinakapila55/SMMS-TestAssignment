@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_3sdp"
+           >
+
+            <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                android:id="@+id/tvlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:textColor="@color/black"
+                android:padding="@dimen/_3sdp"
+                android:text="PMS"/>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/job_card"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvlabel"
+                android:elevation="@dimen/_6sdp"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="@dimen/_6sdp"
+                app:cardUseCompatPadding="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_2sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvJobsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="Jobs"
+                        android:textColor="@color/med_gray"
+                        android:padding="@dimen/_5sdp"
+                        android:textSize="@dimen/_14ssp"/>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                     android:id="@+id/recycler_jobs"
+                     android:layout_width="match_parent"
+                     android:layout_height="@dimen/_100sdp"
+                     app:layout_constraintLeft_toLeftOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/tvJobsLabel"
+                     android:layout_marginLeft="@dimen/_3sdp"
+                     android:layout_marginRight="@dimen/_3sdp"
+                     android:layout_marginTop="@dimen/_2sdp"/>
+
+
+
+                    <com.afollestad.viewpagerdots.DotsIndicator
+                        android:id="@+id/dots"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dot_width="@dimen/_10sdp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recycler_jobs"
+                        app:dot_height="@dimen/_10sdp"
+                        app:dot_margin="@dimen/_5sdp"
+                        app:dot_tint="@color/blue"
+                        app:dots_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:dot_drawable="@drawable/blue_circle"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <com.smms_testassignment.fonts.CustomTextViewRegular
+                android:id="@+id/tvdef_JobsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/job_card"
+                android:text="Deferred Jobs"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:textColor="@color/med_gray"
+                android:padding="@dimen/_3sdp"
+                android:textSize="12sp"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ccDeffered"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvdef_JobsLabel"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:background="@drawable/dark_blue_background">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ccJob"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:background="@drawable/white_background"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                    android:id="@+id/tvJobs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.smms_testassignment.fonts.CustomTextViewRegular
+                    android:id="@+id/tvDefer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="Pending Defer Request"/>
+
+
+                   <ImageView
+                    android:id="@+id/ivNext"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/ic_arrrow"
+                    android:layout_marginRight="@dimen/_7sdp"
+                    app:tint="@color/white"
+                    android:rotation="180"/>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                android:id="@+id/tvInventory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ccDeffered"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Inventory"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_inventory"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInventory"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_1sdp"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ccProcure"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/light_blue_background"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_inventory">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                android:id="@+id/tvShq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ccProcure"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:textColor="@color/black"
+                android:padding="@dimen/_3sdp"
+                android:text="SHEQ"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_sheq"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvShq"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+               />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ccActions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_sheq"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ccCorrective"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginRight="@dimen/_3sdp">
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvCorrective"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="Corrective Action"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:textColor="@color/med_gray"
+                        android:padding="@dimen/_3sdp"
+                        android:textSize="14sp"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardCorrective"
+                        android:layout_width="@dimen/_140sdp"
+                        android:layout_height="@dimen/_90sdp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCorrective"
+                        android:elevation="@dimen/_6sdp"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardElevation="@dimen/_6sdp"
+                        app:cardUseCompatPadding="true"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_4sdp">
+
+                            <ImageView
+                                android:id="@+id/ivCorrective"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                app:layout_constraintRight_toRightOf="parent"
+                                android:src="@drawable/warning"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/gray" />
+
+                            <com.smms_testassignment.fonts.CustomTextViewRegular
+                                android:id="@+id/tvCorrectiveCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginLeft="@dimen/_6sdp"
+                                android:textColor="@color/orange"
+                                android:padding="@dimen/_1sdp"
+                                android:textSize="18sp"/>
+
+                            <com.smms_testassignment.fonts.CustomTextViewRegular
+                                android:id="@+id/tvCorrectTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pending for Approval"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvCorrectiveCount"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_6sdp"
+                                android:textColor="@color/black"
+                                android:padding="@dimen/_1sdp"
+                                android:textSize="12sp"/>
+
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ccPreventive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvPreventive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="Preventive Action"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:textColor="@color/med_gray"
+                        android:padding="@dimen/_3sdp"
+                        android:textSize="14sp"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardPreventive"
+                        android:layout_width="@dimen/_140sdp"
+                        android:layout_height="@dimen/_90sdp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPreventive"
+                        android:elevation="@dimen/_6sdp"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardElevation="@dimen/_6sdp"
+                        app:cardUseCompatPadding="true"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_4sdp">
+
+                            <ImageView
+                                android:id="@+id/ivPreventive"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                app:layout_constraintRight_toRightOf="parent"
+                                android:src="@drawable/warning"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/gray" />
+
+                            <com.smms_testassignment.fonts.CustomTextViewRegular
+                                android:id="@+id/tvPreventiveCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="07"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginLeft="@dimen/_6sdp"
+                                android:textColor="@color/orange"
+                                android:padding="@dimen/_1sdp"
+                                android:textSize="18sp"/>
+
+                            <com.smms_testassignment.fonts.CustomTextViewRegular
+                                android:id="@+id/tvPreventiveTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pending for Approval"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvPreventiveCount"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_6sdp"
+                                android:textColor="@color/black"
+                                android:padding="@dimen/_1sdp"
+                                android:textSize="12sp"/>
+
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ccIncident"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/light_blue_background"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ccActions">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                android:id="@+id/tvCrew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ccIncident"
+                android:textSize="14sp"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:textColor="@color/black"
+                android:padding="@dimen/_3sdp"
+                android:text="Crew"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_crew"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCrew"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_1sdp"/>
+
+            <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                android:id="@+id/tvDms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_crew"
+                android:textSize="14sp"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:textColor="@color/black"
+                android:padding="@dimen/_3sdp"
+                android:text="DMS"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ccDms"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/dms_background"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+               android:layout_margin="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tvDms">
+
+                <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                    android:id="@+id/tvEfomr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:text="e-Forms"/>
+
+                <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                    android:id="@+id/tvCommentCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEfomr"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:text="15"/>
+
+                <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                    android:id="@+id/tvCommentlabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCommentCount"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:text="COMMENT/REPLY"/>
+
+
+
+                <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                    android:id="@+id/tvPendingCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCommentlabel"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:textColor="@color/light_blue_green"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:text="07"/>
+
+                <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                    android:id="@+id/tvPendingLAbel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPendingCount"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:textColor="@color/light_blue_green"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:text="PENDING FOR CHECKING"/>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</RelativeLayout>

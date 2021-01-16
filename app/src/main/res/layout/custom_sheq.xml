@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_margin="@dimen/_2sdp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.smms_testassignment.fonts.CustomTextViewRegular
+        android:id="@+id/tvheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Certificates"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:textColor="@color/med_gray"
+        android:padding="@dimen/_3sdp"
+        android:textSize="12sp"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/job_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvheader"
+        android:elevation="@dimen/_6sdp"
+        app:cardCornerRadius="@dimen/_6sdp"
+        app:cardElevation="@dimen/_6sdp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginLeft="@dimen/_5sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/_6sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ccMain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_margin="@dimen/_3sdp"
+            android:visibility="visible"
+            android:padding="@dimen/_3sdp">
+
+            <ImageView
+                android:id="@+id/ivOver"
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_8sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/red_circle"/>
+
+            <com.smms_testassignment.fonts.CustomTextViewRegular
+                android:id="@+id/tvOver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="Overdue"
+                android:textColor="@color/med_gray_dark"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/_1sdp"
+                app:layout_constraintLeft_toRightOf="@+id/ivOver"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.smms_testassignment.fonts.CustomTextViewRegular
+                android:id="@+id/tvOverValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:text="22"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/_1sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/ivdue"
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_8sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivOver"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:src="@drawable/orange_circle"/>
+
+            <com.smms_testassignment.fonts.CustomTextViewRegular
+                android:id="@+id/tvDue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="Due"
+                android:textColor="@color/med_gray_dark"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintLeft_toRightOf="@+id/ivdue"
+                app:layout_constraintTop_toBottomOf="@+id/tvOver" />
+
+            <com.smms_testassignment.fonts.CustomTextViewRegular
+                android:id="@+id/tvDueValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:text="07"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOverValue" />
+
+            <ImageView
+                android:id="@+id/ivWindow"
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_8sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivdue"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:src="@drawable/blue_circle"/>
+
+            <com.smms_testassignment.fonts.CustomTextViewRegular
+                android:id="@+id/tvWindow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="In Window"
+                android:textColor="@color/med_gray_dark"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintLeft_toRightOf="@+id/ivWindow"
+                app:layout_constraintTop_toBottomOf="@+id/tvDue" />
+
+            <com.smms_testassignment.fonts.CustomTextViewRegular
+                android:id="@+id/tvWindowValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:text="03"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDueValue" />
+
+
+            <ImageView
+                android:id="@+id/ivReminder"
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_8sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivWindow"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:src="@drawable/purple_cirlce"/>
+
+            <com.smms_testassignment.fonts.CustomTextViewRegular
+                android:id="@+id/tvReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="Reminder"
+                android:textColor="@color/med_gray_dark"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintLeft_toRightOf="@+id/ivReminder"
+                app:layout_constraintTop_toBottomOf="@+id/tvWindow" />
+
+            <com.smms_testassignment.fonts.CustomTextViewRegular
+                android:id="@+id/tvReminderValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:text="06"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWindowValue" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ccSub"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_margin="@dimen/_3sdp"
+            android:visibility="gone"
+            android:padding="@dimen/_3sdp">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <com.smms_testassignment.fonts.CustomTextViewRegular
+                    android:id="@+id/tvSurveyHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="INSPECTION/SURVEY FINDINGS"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:textColor="@color/med_gray"
+                    android:padding="@dimen/_3sdp"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:id="@+id/ivOverS"
+                    android:layout_width="@dimen/_8sdp"
+                    android:layout_height="@dimen/_8sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSurveyHead"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/red_circle"/>
+
+                <com.smms_testassignment.fonts.CustomTextViewRegular
+                    android:id="@+id/tvOverS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:text="Overdue"
+                    android:textColor="@color/med_gray_dark"
+                    android:textSize="14sp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    app:layout_constraintLeft_toRightOf="@+id/ivOverS"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSurveyHead"
+                    />
+
+                <com.smms_testassignment.fonts.CustomTextViewRegular
+                    android:id="@+id/tvOverValueS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:text="01"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSurveyHead"
+                    />
+
+                    <ImageView
+                        android:id="@+id/ivdueS"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivOverS"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:src="@drawable/orange_circle"/>
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvDueS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:text="Due"
+                        android:textColor="@color/med_gray_dark"
+                        android:textSize="14sp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:layout_constraintLeft_toRightOf="@+id/ivdueS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOverS" />
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvDueValueS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:text="02"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOverValueS" />
+
+                    <ImageView
+                        android:id="@+id/ivReminderS"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivdueS"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:src="@drawable/purple_cirlce"/>
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvReminderS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:text="Reminder"
+                        android:textColor="@color/med_gray_dark"
+                        android:textSize="14sp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:layout_constraintLeft_toRightOf="@+id/ivReminderS"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDueS" />
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvReminderValueS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:text="15"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDueValueS" />
+
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvFindingSubHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvReminderValueS"
+                        android:text="FINDINGS/NON CORFORMITY"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:textColor="@color/med_gray"
+                        android:padding="@dimen/_3sdp"
+                        android:textSize="12sp"/>
+
+
+                    <ImageView
+                        android:id="@+id/ivOverSUB"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvFindingSubHead"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:src="@drawable/red_circle"/>
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvOverSUB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:text="Overdue"
+                        android:textColor="@color/med_gray_dark"
+                        android:textSize="14sp"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        app:layout_constraintLeft_toRightOf="@+id/ivOverSUB"
+                        app:layout_constraintTop_toBottomOf="@+id/tvFindingSubHead"
+                        />
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvOverValueSUB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:text="01"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvFindingSubHead"
+                        />
+
+                    <ImageView
+                        android:id="@+id/ivdueSUB"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivOverSUB"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:src="@drawable/orange_circle"/>
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvDueSUB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:text="Due"
+                        android:textColor="@color/med_gray_dark"
+                        android:textSize="14sp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:layout_constraintLeft_toRightOf="@+id/ivdueSUB"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOverSUB" />
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvDueValueSUB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:text="02"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOverValueSUB" />
+
+                    <ImageView
+                        android:id="@+id/ivReminderSUB"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivdueSUB"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:src="@drawable/purple_cirlce"/>
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvReminderSUB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:text="Reminder"
+                        android:textColor="@color/med_gray_dark"
+                        android:textSize="14sp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:layout_constraintLeft_toRightOf="@+id/ivReminderSUB"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDueSUB" />
+
+                    <com.smms_testassignment.fonts.CustomTextViewRegular
+                        android:id="@+id/tvReminderValueSUB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:text="15"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDueValueSUB" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

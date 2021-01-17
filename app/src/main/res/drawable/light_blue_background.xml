@@ -8,6 +8,6 @@
         android:width="1dp"/>
 
     <corners
-        android:radius="@dimen/_20sdp"/>
+        android:radius="@dimen/_15sdp"/>
 
 </shape>

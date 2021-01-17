@@ -22,7 +22,8 @@ public class DotsIndicatorDecoration extends RecyclerView.ItemDecoration {
     private final Paint inactivePaint = new Paint();
     private final Paint activePaint = new Paint();
 
-    public DotsIndicatorDecoration(int radius, int padding, int indicatorHeight, @ColorInt int colorInactive, @ColorInt int colorActive) {
+    public DotsIndicatorDecoration(int radius, int padding, int indicatorHeight, @ColorInt int colorInactive, @ColorInt int colorActive)
+    {
         float strokeWidth = Resources.getSystem().getDisplayMetrics().density * 1;
         this.radius = radius;
         inactivePaint.setStrokeCap(Paint.Cap.ROUND);
@@ -36,7 +37,6 @@ public class DotsIndicatorDecoration extends RecyclerView.ItemDecoration {
         activePaint.setStyle(Paint.Style.FILL);
         activePaint.setAntiAlias(true);
         activePaint.setColor(colorActive);
-
         this.indicatorItemPadding = padding;
         this.indicatorHeight = indicatorHeight;
     }

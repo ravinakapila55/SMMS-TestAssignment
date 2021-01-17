@@ -42,11 +42,6 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.MyViewHolder>
 
 
 
-   /* public JobsAdapter(Context context, ArrayList<JobsModel> list)
-    {
-        this.context = context;
-        this.list = list;
-    }*/
 
     @NonNull
     @Override

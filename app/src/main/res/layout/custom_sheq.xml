@@ -15,9 +15,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:text="Certificates"
-        android:layout_marginLeft="@dimen/_5sdp"
         android:textColor="@color/med_gray"
-        android:padding="@dimen/_3sdp"
+        android:padding="@dimen/_2sdp"
         android:textSize="12sp"/>
 
 
@@ -31,7 +30,6 @@
         app:cardCornerRadius="@dimen/_6sdp"
         app:cardElevation="@dimen/_6sdp"
         app:cardUseCompatPadding="true"
-        android:layout_marginLeft="@dimen/_5sdp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="@dimen/_6sdp">
 

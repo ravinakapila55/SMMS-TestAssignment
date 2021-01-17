@@ -28,11 +28,11 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:textSize="@dimen/_14ssp"
-                android:layout_marginLeft="@dimen/_6sdp"
+                android:textSize="14sp"
+                android:layout_marginLeft="@dimen/_7sdp"
                 android:textColor="@color/black"
-                android:padding="@dimen/_3sdp"
-                android:text="PMS"/>
+                android:padding="@dimen/_2sdp"
+                android:text="@string/pms"/>
 
 
             <androidx.cardview.widget.CardView
@@ -44,16 +44,18 @@
                 android:elevation="@dimen/_6sdp"
                 app:cardCornerRadius="@dimen/_6sdp"
                 app:cardElevation="@dimen/_6sdp"
+                android:background="@color/light_blue_green"
                 app:cardUseCompatPadding="true"
-                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
                 app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginRight="@dimen/_6sdp"
-                android:layout_marginTop="@dimen/_2sdp">
+                android:layout_marginRight="@dimen/_4sdp"
+                >
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/_8sdp"
+                    android:layout_height="@dimen/_160sdp"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     >
 
 
@@ -63,16 +65,18 @@
                         android:layout_height="wrap_content"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:text="Jobs"
+                        android:text="@string/jobs"
                         android:textColor="@color/med_gray"
                         android:padding="@dimen/_5sdp"
                         android:textSize="@dimen/_14ssp"/>
 
 
+
+
                     <androidx.recyclerview.widget.RecyclerView
                      android:id="@+id/recycler_jobs"
                      android:layout_width="match_parent"
-                     android:layout_height="@dimen/_100sdp"
+                     android:layout_height="@dimen/_80sdp"
                      app:layout_constraintLeft_toLeftOf="parent"
                      app:layout_constraintTop_toBottomOf="@+id/tvJobsLabel"
                      android:layout_marginLeft="@dimen/_3sdp"
@@ -80,9 +84,19 @@
                      android:layout_marginTop="@dimen/_2sdp"/>
 
 
+                    <me.relex.circleindicator.CircleIndicator2
+                        android:id="@+id/recyclerIndicator"
+                        android:layout_width="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        app:ci_drawable_unselected="@drawable/gray_circle"
+                        app:ci_drawable="@drawable/blue_circle"/>
 
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
 
 
             </androidx.cardview.widget.CardView>
@@ -93,8 +107,8 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="parent"
                app:layout_constraintTop_toBottomOf="@id/job_card"
-                android:text="Deferred Jobs"
-                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="@string/defered_jobs"
+                android:layout_marginLeft="@dimen/_7sdp"
                 android:textColor="@color/med_gray"
                 android:padding="@dimen/_3sdp"
                 android:textSize="12sp"/>
@@ -150,7 +164,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_12ssp"
-                    android:text="Pending Defer Request"/>
+                    android:text="@string/pending_defer_request"/>
 
 
                    <ImageView
@@ -176,11 +190,11 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ccDeffered"
-                android:textSize="@dimen/_14ssp"
-                android:layout_marginLeft="@dimen/_5sdp"
+                android:textSize="14sp"
+                android:layout_marginLeft="@dimen/_8sdp"
                 android:textColor="@color/black"
                 android:layout_marginTop="@dimen/_8sdp"
-                android:text="Inventory"/>
+                android:text="@string/inventory"/>
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -198,7 +212,7 @@
                 android:id="@+id/ccProcure"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_270sdp"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:padding="@dimen/_5sdp"
                 android:background="@drawable/light_blue_background"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -211,11 +225,11 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="14sp"
                     android:layout_marginLeft="@dimen/_6sdp"
                     android:textColor="@color/black"
                     android:padding="@dimen/_3sdp"
-                    android:text="Procurement"/>
+                    android:text="@string/procurement"/>
 
                 <com.google.android.material.tabs.TabLayout
                     android:layout_width="match_parent"
@@ -246,7 +260,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
                 android:layout_marginLeft="@dimen/_6sdp"
                 android:paddingBottom="@dimen/_20sdp"
                 app:layout_constraintTop_toBottomOf="@+id/ccProcure">
@@ -257,11 +271,11 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="14sp"
                     android:layout_marginTop="@dimen/_6sdp"
                     android:textColor="@color/black"
                     android:padding="@dimen/_3sdp"
-                    android:text="SHEQ"/>
+                    android:text="@string/sheq"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_sheq"
@@ -269,12 +283,25 @@
                     android:layout_height="@dimen/_170sdp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvShq"
-                    android:layout_marginLeft="@dimen/_5sdp"
                     android:layout_marginTop="@dimen/_1sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
                     android:paddingBottom="@dimen/_4sdp"
-                    android:layout_marginRight="@dimen/_5sdp"
                     />
+
+
+                <me.relex.circleindicator.CircleIndicator2
+                    android:id="@+id/recyclerSheqIndicator"
+                    android:layout_width="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    app:ci_drawable_unselected="@drawable/gray_circle"
+                    app:ci_drawable="@drawable/blue_circle"/>
+
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -287,7 +314,6 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ccShq"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginLeft="@dimen/_3sdp"
                 android:layout_marginRight="@dimen/_3sdp"
                 app:layout_constraintRight_toRightOf="parent">
@@ -306,7 +332,7 @@
                         android:layout_height="wrap_content"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:text="Corrective Action"
+                        android:text="@string/corrective_action"
                         android:layout_marginLeft="@dimen/_7sdp"
                         android:textColor="@color/med_gray"
                         android:padding="@dimen/_3sdp"
@@ -357,7 +383,7 @@
                                 android:id="@+id/tvCorrectTitle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Pending for Approval"
+                                android:text="@string/pending_for_Approval"
                                 app:layout_constraintLeft_toLeftOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/tvCorrectiveCount"
                                 android:layout_marginTop="@dimen/_5sdp"
@@ -395,7 +421,7 @@
                         android:layout_height="wrap_content"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:text="Preventive Action"
+                        android:text="@string/preventive_action"
                         android:layout_marginLeft="@dimen/_7sdp"
                         android:textColor="@color/med_gray"
                         android:padding="@dimen/_3sdp"
@@ -446,7 +472,7 @@
                                 android:id="@+id/tvPreventiveTitle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Pending for Approval"
+                                android:text="@string/pending_for_Approval"
                                 app:layout_constraintLeft_toLeftOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/tvPreventiveCount"
                                 android:layout_marginTop="@dimen/_5sdp"
@@ -491,11 +517,11 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="14sp"
                     android:layout_marginLeft="@dimen/_5sdp"
                     android:textColor="@color/med_gray"
                     android:layout_marginTop="@dimen/_8sdp"
-                    android:text="Incident/Accidents"/>
+                    android:text="@string/incident_accident"/>
 
 
                 <com.chipset.pieviewgroup.PieViewGroup
@@ -519,21 +545,22 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ccIncident"
                 android:textSize="14sp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginLeft="@dimen/_6sdp"
                 android:textColor="@color/black"
                 android:padding="@dimen/_3sdp"
-                android:text="Crew"/>
+                android:text="@string/crew"/>
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_crew"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_90sdp"
+                android:layout_height="@dimen/_70sdp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvCrew"
                 android:layout_marginLeft="@dimen/_7sdp"
                 android:layout_marginRight="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_1sdp"/>
+                android:layout_marginTop="@dimen/_3sdp"/>
 
             <com.smms_testassignment.fonts.CustomTextViewSemiBold
                 android:id="@+id/tvDms"
@@ -542,22 +569,24 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recycler_crew"
                 android:textSize="14sp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginLeft="@dimen/_6sdp"
                 android:textColor="@color/black"
                 android:padding="@dimen/_3sdp"
-                android:text="DMS"/>
+                android:text="@string/dms"/>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ccDms"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_140sdp"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_6sdp"
                 android:background="@drawable/dms_background"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-               android:layout_margin="@dimen/_5sdp"
+               android:layout_margin="@dimen/_7sdp"
                 android:padding="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_7sdp"
                 app:layout_constraintTop_toBottomOf="@+id/tvDms">
 
                 <com.smms_testassignment.fonts.CustomTextViewSemiBold
@@ -571,7 +600,7 @@
                     android:textColor="@color/white"
                     android:layout_marginTop="@dimen/_1sdp"
                     android:padding="@dimen/_3sdp"
-                    android:text="e-Forms"/>
+                    android:text="@string/e_form"/>
 
                 <com.smms_testassignment.fonts.CustomTextViewSemiBold
                     android:id="@+id/tvCommentCount"
@@ -597,7 +626,7 @@
                     android:textColor="@color/white"
                     android:layout_marginTop="@dimen/_1sdp"
                     android:padding="@dimen/_3sdp"
-                    android:text="COMMENT/REPLY"/>
+                    android:text="@string/comment_reply"/>
 
 
 
@@ -625,7 +654,7 @@
                     android:textColor="@color/light_blue_green"
                     android:layout_marginTop="@dimen/_1sdp"
                     android:padding="@dimen/_3sdp"
-                    android:text="PENDING FOR CHECKING"/>
+                    android:text="@string/pending_checking"/>
 
 
 
@@ -640,10 +669,11 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ccDms"
                 android:textSize="14sp"
+                android:layout_marginTop="@dimen/_6sdp"
                 android:layout_marginLeft="@dimen/_6sdp"
                 android:textColor="@color/black"
                 android:padding="@dimen/_3sdp"
-                android:text="Others"/>
+                android:text="@string/others"/>
 
 
 
@@ -653,8 +683,8 @@
                 android:layout_height="@dimen/_150sdp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvOthers"
-                android:layout_marginLeft="@dimen/_7sdp"
-                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_7sdp"
                 android:layout_marginTop="@dimen/_1sdp"/>
 
 

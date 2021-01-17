@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">SMMS</string>
+    <string name="header">SMMS Enterprise</string>
+    <string name="pms">PMS</string>
+    <string name="jobs">Jobs</string>
+    <string name="defered_jobs">Deferred Jobs</string>
+    <string name="pending_defer_request">Pending Defer Request</string>
+    <string name="inventory">Inventory</string>
+    <string name="procurement">Procurement</string>
+    <string name="sheq">SHEQ</string>
+    <string name="corrective_action">Corrective Action</string>
+    <string name="pending_for_Approval">Pending for Approval</string>
+    <string name="preventive_action">Preventive Action</string>
+    <string name="incident_accident">Incident/Accidents</string>
+    <string name="crew">Crew</string>
+    <string name="dms">DMS</string>
+    <string name="e_form">e-Forms</string>
+    <string name="comment_reply">COMMENT/REPLY</string>
+    <string name="pending_checking">PENDING FOR CHECKING</string>
+    <string name="others">Others</string>
 </resources>

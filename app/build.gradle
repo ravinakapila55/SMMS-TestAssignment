@@ -45,6 +45,15 @@ dependencies {
 
     implementation 'com.afollestad:viewpagerdots:1.0.0'
 
+    implementation 'com.chipset:pieviewgroup:0.7.0'
+
+
+    /* implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
+     implementation 'com.nineoldandroids:library:2.4.0'*/
+
+    compile 'com.github.blackfizz:eazegraph:1.2.2@aar'
+    compile 'com.nineoldandroids:library:2.4.0'
+
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

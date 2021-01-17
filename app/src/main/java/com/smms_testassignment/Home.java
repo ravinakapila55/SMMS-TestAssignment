@@ -1,22 +1,36 @@
 package com.smms_testassignment;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
+import com.chipset.pieviewgroup.PieViewGroup;
+import com.google.android.material.tabs.TabLayout;
 import com.smms_testassignment.adapter.CrewAdapter;
 import com.smms_testassignment.adapter.InventoryAdapter;
 import com.smms_testassignment.adapter.JobsAdapter;
+import com.smms_testassignment.adapter.MyPagerAdapter;
+import com.smms_testassignment.adapter.OthersAdapter;
 import com.smms_testassignment.adapter.SheqAdapter;
 import com.smms_testassignment.model.CrewModel;
 import com.smms_testassignment.model.InventoryModel;
 import com.smms_testassignment.model.JobsModel;
+import com.smms_testassignment.model.OthersModel;
 import com.smms_testassignment.model.SheqModel;
 
+import org.eazegraph.lib.charts.PieChart;
+import org.eazegraph.lib.models.PieModel;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Home extends AppCompatActivity {
 
@@ -24,15 +38,21 @@ public class Home extends AppCompatActivity {
     ArrayList<InventoryModel> inventoryList = new ArrayList<>();
     ArrayList<SheqModel> sheqList = new ArrayList<>();
     ArrayList<CrewModel> crewList = new ArrayList<>();
+    ArrayList<OthersModel> otherList = new ArrayList<>();
     RecyclerView recycler_jobs;
     RecyclerView recycler_inventory;
     RecyclerView recycler_sheq;
     RecyclerView recycler_crew;
+    RecyclerView recycler_others;
+    ViewPager pager;
+    TabLayout tablayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+//        final Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/CUSTOM.TTF");
+
         setInit();
 
     }
@@ -43,10 +63,17 @@ public class Home extends AppCompatActivity {
         recycler_inventory=(RecyclerView)findViewById(R.id.recycler_inventory);
         recycler_sheq=(RecyclerView)findViewById(R.id.recycler_sheq);
         recycler_crew=(RecyclerView)findViewById(R.id.recycler_crew);
+        recycler_others=(RecyclerView)findViewById(R.id.recycler_others);
+        incident_pie = (PieViewGroup) findViewById(R.id.incident_pie);
+        pager = (ViewPager) findViewById(R.id.pager);
+        tablayout = (TabLayout) findViewById(R.id.tablayout);
         setJobData();
         setInventoryData();
         setSheqData();
         setCrewData();
+        setOthersData();
+        setIncidentAccident();
+        setProcurement();
     }
 
 
@@ -163,5 +190,53 @@ public class Home extends AppCompatActivity {
         recycler_crew.setLayoutManager(layoutManager);
         CrewAdapter crewAdapter=new CrewAdapter(this,crewList);
         recycler_crew.setAdapter(crewAdapter);
+    }
+
+    public void setOthersData()
+    {
+                otherList.clear();
+
+                OthersModel othersModel=new OthersModel("1","BUDGET","Pending for Approval","03",R.drawable.money);
+                otherList.add(othersModel);
+
+                othersModel=new OthersModel("2","VENDOR","Pending for Approval","12",R.drawable.metro_shope);
+                otherList.add(othersModel);
+
+        LinearLayoutManager layoutManager=new LinearLayoutManager(this);
+        recycler_others.setLayoutManager(layoutManager);
+        OthersAdapter crewAdapter=new OthersAdapter(this,otherList);
+        recycler_others.setAdapter(crewAdapter);
+
+    }
+    PieViewGroup incident_pie;
+    @NonNull
+    private final Map<String, Integer> dataSource = new HashMap<>();
+    public void setIncidentAccident()
+    {
+
+        LoadIncidentData();
+        incident_pie.setData(dataSource);
+        incident_pie.showLabels(false);
+        incident_pie.build();
+
+    }
+
+    ArrayList<Integer> colors=new ArrayList<>();
+
+    private void LoadIncidentData()
+    {
+        dataSource.put("Closure",23);
+        dataSource.put("Ship Follow-Up",20);
+        dataSource.put("Initial Office Review",05);
+        dataSource.put("Office Review",07);
+
+    }
+
+
+    public void setProcurement()
+    {
+        MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
+        pager.setAdapter(myPagerAdapter);
+        tablayout.setupWithViewPager(pager);
     }
 }

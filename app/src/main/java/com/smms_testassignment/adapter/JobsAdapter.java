@@ -58,12 +58,8 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.MyViewHolder>
 
         for (int i = 0; i <color.length ; i++)
         {
-
             holder.tvJobs.setTextColor(context.getResources().getColor(color[position]));
         }
-
-
-
     }
 
     @Override

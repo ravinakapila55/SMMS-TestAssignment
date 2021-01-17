@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_height="match_parent">
+
+       <com.chipset.pieviewgroup.PieViewGroup
+        android:id="@+id/pieProcure"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="@dimen/_280sdp"
+        app:pvg_labelTextSize="6sp"
+        app:pvg_showLabels="false"
+        android:layout_height="@dimen/_150sdp">
+
+    </com.chipset.pieviewgroup.PieViewGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

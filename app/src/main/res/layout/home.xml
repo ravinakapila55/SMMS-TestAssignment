@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -128,7 +127,7 @@
                 android:background="@drawable/dark_blue_background">
 
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/ccJob"
                     android:layout_width="@dimen/_35sdp"
                     android:layout_height="@dimen/_35sdp"
@@ -212,12 +211,47 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ccProcure"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_200sdp"
+                android:layout_height="@dimen/_270sdp"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
                 android:background="@drawable/light_blue_background"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recycler_inventory">
+
+                <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                    android:id="@+id/tvProurement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="@dimen/_14ssp"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Procurement"/>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:id="@+id/tablayout"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProurement"
+                    android:background="@android:color/transparent"
+                    android:minHeight="?attr/actionBarSize"
+                   />
+
+
+
+                <androidx.viewpager.widget.ViewPager
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_155sdp"
+                    android:id="@+id/pager"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tablayout"
+                    />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -443,12 +477,37 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ccIncident"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_130sdp"
+                android:layout_height="@dimen/_280sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:background="@drawable/light_blue_background"
                 app:layout_constraintLeft_toLeftOf="parent"
+                android:padding="@dimen/_2sdp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ccActions">
+
+                <com.smms_testassignment.fonts.CustomTextViewRegular
+                    android:id="@+id/tvincident"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="@dimen/_14ssp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:textColor="@color/med_gray"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Incident/Accidents"/>
+
+
+                <com.chipset.pieviewgroup.PieViewGroup
+                    android:id="@+id/incident_pie"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:pvg_chartType="PIE"
+                    app:pvg_legendType="SHORT"
+                    app:layout_constraintTop_toBottomOf="@+id/tvincident"
+                    android:layout_height="@dimen/_250sdp"
+                    android:layout_width="@dimen/_180sdp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -573,6 +632,29 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+            <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                android:id="@+id/tvOthers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ccDms"
+                android:textSize="14sp"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:textColor="@color/black"
+                android:padding="@dimen/_3sdp"
+                android:text="Others"/>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_others"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOthers"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_1sdp"/>
 
 
 

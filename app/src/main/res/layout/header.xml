@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_50sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/blue_gradient">
+    android:background="@drawable/header_gradient">
 
 
     <ImageView
@@ -71,7 +71,7 @@
                 android:padding="@dimen/_5sdp"
                 android:id="@+id/ivFilter"
                 android:layout_marginLeft="@dimen/_5sdp"
-                android:src="@drawable/notiifcation"
+                android:src="@drawable/filter"
                 android:layout_marginRight="@dimen/_5sdp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

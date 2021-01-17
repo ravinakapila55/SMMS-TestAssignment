@@ -1,13 +1,18 @@
 package com.smms_testassignment;
 
+import android.app.job.JobInfo;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -15,10 +20,12 @@ import com.chipset.pieviewgroup.PieViewGroup;
 import com.google.android.material.tabs.TabLayout;
 import com.smms_testassignment.adapter.CrewAdapter;
 import com.smms_testassignment.adapter.InventoryAdapter;
+import com.smms_testassignment.adapter.JobMainAdapter;
 import com.smms_testassignment.adapter.JobsAdapter;
 import com.smms_testassignment.adapter.MyPagerAdapter;
 import com.smms_testassignment.adapter.OthersAdapter;
 import com.smms_testassignment.adapter.SheqAdapter;
+import com.smms_testassignment.custom.DotsIndicatorDecoration;
 import com.smms_testassignment.model.CrewModel;
 import com.smms_testassignment.model.InventoryModel;
 import com.smms_testassignment.model.JobsModel;
@@ -32,7 +39,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity
+{
 
     ArrayList<JobsModel> jobList = new ArrayList<>();
     ArrayList<InventoryModel> inventoryList = new ArrayList<>();
@@ -50,7 +58,10 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.home);
+
 //        final Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/CUSTOM.TTF");
 
         setInit();
@@ -107,9 +118,18 @@ public class Home extends AppCompatActivity {
         jobList.add(jobsModel);
 
         LinearLayoutManager layoutManager=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        recycler_jobs.setNestedScrollingEnabled(false);
         recycler_jobs.setLayoutManager(layoutManager);
-        JobsAdapter jobsAdapter=new JobsAdapter(this,jobList);
-        recycler_jobs.setAdapter(jobsAdapter);
+//        JobsAdapter jobsAdapter=new JobsAdapter(this,jobList);
+        JobMainAdapter mainAdapter=new JobMainAdapter(this,jobList);
+        recycler_jobs.setAdapter(mainAdapter);
+
+        final int radius = getResources().getDimensionPixelSize(R.dimen.radius);
+        final int dotsHeight = getResources().getDimensionPixelSize(R.dimen.dots_height);
+        final int color = ContextCompat.getColor(this, R.color.blue);
+        final int colorInactive = ContextCompat.getColor(this, R.color.gray);
+        recycler_jobs.addItemDecoration(new DotsIndicatorDecoration(radius, radius * 4, dotsHeight, colorInactive, color));
+        new PagerSnapHelper().attachToRecyclerView(recycler_jobs);
 
     }
 
@@ -141,6 +161,8 @@ public class Home extends AppCompatActivity {
 
 
         LinearLayoutManager layoutManager=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        recycler_inventory.setNestedScrollingEnabled(false);
+
         recycler_inventory.setLayoutManager(layoutManager);
         InventoryAdapter inventoryAdapter=new InventoryAdapter(this,inventoryList);
         recycler_inventory.setAdapter(inventoryAdapter);
@@ -172,9 +194,20 @@ public class Home extends AppCompatActivity {
 
 
         LinearLayoutManager layoutManager=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        recycler_sheq.setNestedScrollingEnabled(false);
+
         recycler_sheq.setLayoutManager(layoutManager);
+//        recycler_sheq.setHasFixedSize(true);
+
         SheqAdapter sheqAdapter=new SheqAdapter(this,sheqList);
         recycler_sheq.setAdapter(sheqAdapter);
+
+        final int radius = getResources().getDimensionPixelSize(R.dimen.radius);
+        final int dotsHeight = getResources().getDimensionPixelSize(R.dimen.dots_height);
+        final int color = ContextCompat.getColor(this, R.color.blue);
+        final int colorInactive = ContextCompat.getColor(this, R.color.gray);
+        recycler_sheq.addItemDecoration(new DotsIndicatorDecoration(radius, radius * 4, dotsHeight, colorInactive, color));
+        new PagerSnapHelper().attachToRecyclerView(recycler_sheq);
     }
 
     public void setCrewData()
@@ -187,6 +220,8 @@ public class Home extends AppCompatActivity {
         crewList.add(crewModel);
 
         LinearLayoutManager layoutManager=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        recycler_crew.setNestedScrollingEnabled(false);
+
         recycler_crew.setLayoutManager(layoutManager);
         CrewAdapter crewAdapter=new CrewAdapter(this,crewList);
         recycler_crew.setAdapter(crewAdapter);
@@ -203,6 +238,7 @@ public class Home extends AppCompatActivity {
                 otherList.add(othersModel);
 
         LinearLayoutManager layoutManager=new LinearLayoutManager(this);
+        recycler_others.setNestedScrollingEnabled(false);
         recycler_others.setLayoutManager(layoutManager);
         OthersAdapter crewAdapter=new OthersAdapter(this,otherList);
         recycler_others.setAdapter(crewAdapter);

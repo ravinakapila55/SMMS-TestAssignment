@@ -40,7 +40,6 @@ public class RequisitionFragment  extends Fragment {
         pieProcure.setChartType(ChartTypes.DONUT);
         pieProcure.setLegendMode(LegendTypes.FULL);
         pieProcure.setDonutRadiusPercent(50);
-        pieProcure.setLegendDrawableId(R.drawable.blue_circle);
         pieProcure.build();
     }
 
@@ -48,7 +47,7 @@ public class RequisitionFragment  extends Fragment {
     {
         dataSource.put("Unsanctioned",19);
         dataSource.put("Pending",11);
-        dataSource.put("Upcoming",20);
+        dataSource.put("upcoming",15);
     }
 
 }

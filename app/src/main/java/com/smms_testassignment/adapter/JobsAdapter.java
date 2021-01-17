@@ -20,6 +20,13 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.MyViewHolder>
 {
     Context context;
     ArrayList<JobsModel> list;
+    JobMainAdapter mainAdapter;
+
+    public JobsAdapter(Context context, ArrayList<JobsModel> list, JobMainAdapter mainAdapter) {
+        this.context = context;
+        this.list = list;
+        this.mainAdapter = mainAdapter;
+    }
 
     Integer color[] =
             {
@@ -35,11 +42,11 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.MyViewHolder>
 
 
 
-    public JobsAdapter(Context context, ArrayList<JobsModel> list)
+   /* public JobsAdapter(Context context, ArrayList<JobsModel> list)
     {
         this.context = context;
         this.list = list;
-    }
+    }*/
 
     @NonNull
     @Override

@@ -38,7 +38,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/job_card"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_130sdp"
+                android:layout_height="@dimen/_170sdp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvlabel"
                 android:elevation="@dimen/_6sdp"
@@ -53,6 +53,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_8sdp"
                     >
 
 
@@ -80,21 +81,6 @@
 
 
 
-                    <com.afollestad.viewpagerdots.DotsIndicator
-                        android:id="@+id/dots"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:dot_width="@dimen/_10sdp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/recycler_jobs"
-                        app:dot_height="@dimen/_10sdp"
-                        app:dot_margin="@dimen/_5sdp"
-                        app:dot_tint="@color/blue"
-                        app:dots_gravity="center"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        app:dot_drawable="@drawable/blue_circle"
-                        />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -255,29 +241,44 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.smms_testassignment.fonts.CustomTextViewSemiBold
-                android:id="@+id/tvShq"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ccShq"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ccProcure"
-                android:textSize="@dimen/_14ssp"
-                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_marginLeft="@dimen/_6sdp"
-                android:textColor="@color/black"
-                android:padding="@dimen/_3sdp"
-                android:text="SHEQ"/>
+                android:paddingBottom="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/ccProcure">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_sheq"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_150sdp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvShq"
-                android:layout_marginLeft="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_1sdp"
-                android:layout_marginRight="@dimen/_5sdp"
-               />
+                <com.smms_testassignment.fonts.CustomTextViewSemiBold
+                    android:id="@+id/tvShq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="@dimen/_14ssp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_3sdp"
+                    android:text="SHEQ"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_sheq"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_170sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvShq"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -285,8 +286,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recycler_sheq"
-                android:layout_marginTop="@dimen/_2sdp"
+                app:layout_constraintTop_toBottomOf="@+id/ccShq"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginLeft="@dimen/_3sdp"
                 android:layout_marginRight="@dimen/_3sdp"
                 app:layout_constraintRight_toRightOf="parent">
@@ -649,7 +650,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_others"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_120sdp"
+                android:layout_height="@dimen/_150sdp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvOthers"
                 android:layout_marginLeft="@dimen/_7sdp"
